@@ -1,0 +1,127 @@
+def not(a)
+    b = 1
+    if a
+        b=0
+    end
+return b
+
+def add(a, b)
+    while a
+        b = inc(b)
+        a = dec(a)
+    end
+return b
+
+def mul(a, b)
+    res = 0
+    while a
+        res = add(res, b)
+        a = dec(a)
+    end
+return res
+
+def and(a, b)
+    res = 0
+    if a
+        if b
+            res =1
+        end
+    end
+return res
+
+def lt(a, b)
+    while and(a, b)
+        a = dec(a)
+        b = dec(b)
+    end
+return b
+
+def eq(a, b)
+    while and(a, b)
+        a = dec(a)
+        b = dec(b)
+    end
+return and(not(a), not(b))
+
+def leq(a, b)
+return not(lt(b,a))
+
+def gt(a, b)
+return lt(b, a)
+
+def geq(a, b)
+return leq(b, a)
+
+def sub(a, b)
+    while b
+        a = dec(a)
+        b = dec(b)
+    end
+return a
+
+def div(a, b)
+    res = 0
+    while leq(b, a)
+        res = inc(res)
+        a = sub(a, b)
+    end
+return res
+
+def rem(a, b)
+    while leq(b, a)
+        a = sub(a, b)
+    end
+return a 
+
+def dig2byte(a)
+    b=sub(a, 48)
+    if not(and(lt(b, 10), leq(b, a)))
+        b=0
+    end
+return b
+
+def inputByte()
+    res = 0
+    input = 0
+    while not(eq(input, '.'))       
+        res = mul(res, 10)
+        digit = dig2byte(input)
+        res = add(res, digit)
+        input = in()
+    end
+return res
+
+def byte2dig(a)
+    b='E'
+    if and(lt(a, 10), leq(0, a))
+        b=add(a, 48)
+    end
+return b
+
+def naiveOutByte(b)
+    while b
+        dig = rem(b, 10)
+        b =div(b, 10)
+        out(byte2dig(dig))
+    end
+return 0
+
+def outputByte(b)
+    out(byte2dig(div(b, 100)))
+    r1 = rem(b, 100)
+    out(byte2dig(div(r1, 10)))
+    r2 = rem(r1, 10)
+    out(byte2dig(r2))
+return 0
+
+def main()
+    a = inputByte()
+    b = inputByte()
+
+    outputByte(a)
+    out('+')
+    outputByte(b)
+    out('=')
+    outputByte(add(a, b))
+    out(10)
+return 0

@@ -1,0 +1,24 @@
+
+def not(a)
+    b = 1 
+    if a
+        b = 0
+    end
+return b
+
+def isEven(a)
+    b = 1
+    while a
+        b = not(b)
+        a = dec(a)
+    end
+return b
+
+def main()
+    a = in()
+    if isEven(a)
+        out('E')
+    else
+        out('O')
+    end
+return 0

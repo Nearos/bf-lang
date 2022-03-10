@@ -1,0 +1,18 @@
+def add(a, b)
+    while a
+        a = dec(a)
+        b = inc(b)
+    end
+return b
+
+def main()
+    a = in()
+    if a 
+        b = in()
+        c = in()
+        out(add(b, c))
+    else
+        b = in()
+        out(inc(b))
+    end
+return a
