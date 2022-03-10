@@ -11,7 +11,7 @@ The idea here is to create a language which compiles to brainfuck. Here are some
 
 - When a function is called, the active cell is the first unused cell, so the function can act as if it is a program in itself
 - Except that arguments are passed to the left of the active cell when the function is called
-- When a function returs, the arguments should be removed, and in their place is the return value, which is also the active cell
+- When a function returns, the arguments should be removed, and in their place is the return value, which is also the active cell
 
 ## Example Code
 
@@ -33,4 +33,5 @@ The idea here is to create a language which compiles to brainfuck. Here are some
 
 - &#9745; Defining the language
 - &#9745; Parser
-- &#9746; Code generator
+- &#9745; Code generator
+- &#9744; Support for dynamic data
