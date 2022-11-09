@@ -1,6 +1,6 @@
-# Compiler to Brainfuck
+# Compiler to Brainf--k
 
-A compiler which compiles a simple language to brainfuck. See examples for example programs in this language (.bfl), and their compiled counterparts (.b)
+A compiler which compiles a simple language to brainf--k. See examples for example programs in this language (.bfl), and their compiled counterparts (.b)
 
 ## How to install
 
